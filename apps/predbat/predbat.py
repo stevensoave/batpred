@@ -8345,6 +8345,7 @@ class PredBat(hass.Hass):
         if entity_id:
             # From 9.0.0 of the Octopus plugin the data is split between previous rate, current rate and next rate
             # and the sensor is replaced with an event - try to support the old settings and find the new events
+            self.log("Info: Fetch Octopus rates from {}".format(entity_id))
 
             # Previous rates
             if "_current_rate" in entity_id:
@@ -8353,33 +8354,45 @@ class PredBat(hass.Hass):
                 data_import = self.get_state(entity_id=prev_rate_id, attribute="rates")
                 if data_import:
                     data_all += data_import
+                    self.log("Info: Fetched Octopus data from 'rates' from {}".format(prev_rate_id))
                 else:
                     prev_rate_id = entity_id.replace("_current_rate", "_previous_rate")
                     data_import = self.get_state(entity_id=prev_rate_id, attribute="all_rates")
                     if data_import:
+                        self.log("Info: Fetched Octopusdata from 'all_rates' from {}".format(prev_rate_id))
                         data_all += data_import
+                    else:
+                        self.log("WARN: No Octopus data in sensor {} attribute 'all_rates'".format(prev_rate_id))
 
             # Current rates
             current_rate_id = entity_id.replace("_current_rate", "_current_day_rates").replace("sensor.", "event.")
             data_import = self.get_state(entity_id=current_rate_id, attribute="rates")
             if data_import:
+                self.log("Info: Fetched Octopus data from 'rates' from {}".format(current_rate_id))
                 data_all += data_import
             else:
-                data_import = self.get_state(entity_id=entity_id, attribute="all_rates")
+                data_import = self.get_state(entity_id=current_rate_id, attribute="all_rates")
                 if data_import:
+                    self.log("Info: Fetched Octopus data from 'all_rates' from {}".format(current_rate_id))
                     data_all += data_import
+                else:
+                    self.log("WARN: No Octopus data in sensor {} attribute 'all_rates'".format(current_rate_id))
 
             # Next rates
             if "_current_rate" in entity_id:
                 next_rate_id = entity_id.replace("_current_rate", "_next_day_rates").replace("sensor.", "event.")
                 data_import = self.get_state(entity_id=next_rate_id, attribute="rates")
                 if data_import:
+                    self.log("Info: Fetched Octopus data from 'rates' from {}".format(next_rate_id))
                     data_all += data_import
                 else:
                     next_rate_id = entity_id.replace("_current_rate", "_next_rate")
                     data_import = self.get_state(entity_id=next_rate_id, attribute="all_rates")
                     if data_import:
+                        self.log("Info: Fetched Octopus data from 'all_rates' from {}".format(next_rate_id))
                         data_all += data_import
+                    else:
+                        self.log("WARN: No Octopus data in sensor {} attribute 'all_rates'".format(next_rate_id))
 
         if data_all:
             rate_key = "rate"

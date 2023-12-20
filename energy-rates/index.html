@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Energy rates - Predbat Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Energy rates";
+        var mkdocs_page_input_path = "energy-rates.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Predbat Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../what-does-predbat-do/">What does Predbat do?</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing & configuring Predbat</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../installation-summary/">Install summary</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/">Install details</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Energy rates</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#octopus-energy-plugin">Octopus Energy Plugin</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#octopus-saving-sessions">Octopus Saving sessions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rate-bands">Rate bands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rate-offsets">Rate offsets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#future-agile-energy-rates">Future Agile energy rates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nordpool-market-energy-rates">Nordpool market energy rates</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../car-charge-planning/">Car charging planning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../config-yml-settings/">apps.yaml settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration-guide/">Configuration guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../customisation/">Customisation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../video-guides/">Video Guides</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Viewing Predbat data</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../output-data/">Output data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../creating-charts/">Creating the charts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../predbat-plan-card/">Predbat Plan card</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Predbat development</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../other-inverters/">Other Inverters</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../todo-list/">To-do list</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developing/">Developing on Predbat</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Predbat Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Installing & configuring Predbat</li>
+      <li class="breadcrumb-item active">Energy rates</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="energy-rates">Energy rates</h1>
+<h2 id="octopus-energy-plugin">Octopus Energy Plugin</h2>
+<p>If you want to use real pricing data and have Octopus Energy then ensure you have the Octopus Energy plugin installed and working
+(<a href="https://github.com/BottlecapDave/HomeAssistant-OctopusEnergy/">https://github.com/BottlecapDave/HomeAssistant-OctopusEnergy</a>)</p>
+<p>The Octopus Energy Plugin also provides support for Intelligent Octopus charging to support car charging.</p>
+<p>When <strong>octopus_intelligent_charging</strong> is True and you are on Intelligent Octopus import the car charging plan will be
+extracted from Octopus and used for Predbat to plan, and it may charge the home battery using these slots also.</p>
+<p><strong>CAUTION</strong> To get detailed energy rates needed by Predbat you need to go into Home Assistant and manually enable the following
+ events which are disabled by the plugin by default in some versions:</p>
+<pre><code class="language-yaml">    event.octopus_energy_electricity_xxxxxxxx_previous_day_rates
+    event.octopus_energy_electricity_xxxxxxxx_current_day_rates
+    event.octopus_energy_electricity_xxxxxxxx_next_day_rates
+
+    event.octopus_energy_electricity_xxxxxxxx_export_previous_day_rates
+    event.octopus_energy_electricity_xxxxxxxx_export_current_day_rates
+    event.octopus_energy_electricity_xxxxxxxx_export_next_day_rates
+</code></pre>
+<h3 id="octopus-saving-sessions">Octopus Saving sessions</h3>
+<p>For Predbat to automatically manage saving sessions you will need to make sure that <strong>octopus_saving_session</strong> is set
+in apps.yaml to point to the saving session binary sensor supported by the Octopus Energy plugin (see template apps.yaml
+for the default name).</p>
+<p>When a saving session is available it will be automatically joined by Predbat and then should appear as a joined session
+within the next 30 minutes.</p>
+<p>When a saving session has been joined the energy rates for import and export will be overridden by adding the assumed saving rate
+to your normal rate. The assumed rate will be taken from the Octopus Energy add-in (v9.1.0 and above) and converted into pence
+using the <strong>octopus_saving_session_octopoints_per_penny</strong> configuration item in apps.yaml (default is 8).</p>
+<p>As the saving session import and export rates are very high compared to normal you would expect Predbat to export during the entire
+period if the battery is large amount, a pre-charge may happen at some point during the day to maintain the right level for the session.</p>
+<p>If you are using expert mode, for best results: <strong>switch.predbat_combine_charge_slots</strong> (<em>expert mode</em>) should be turned off.
+Set <strong>input_number.rate_low_threshold</strong> (<em>expert mode</em>) and <strong>input_number.rate_high_threshold</strong> (<em>expert mode</em>) to 0 for automatic mode.</p>
+<p>For forced export you need to ensure that <strong>switch.predbat_calculate_best_discharge</strong> is enabled and that <strong>switch.predbat_set_discharge_freeze_only</strong> is disabled.
+If you do not have an export tariff then forced export will not apply.</p>
+<h2 id="rate-bands">Rate bands</h2>
+<p>You can manually configure your rate bands (assuming they repeat) using rates_import/rates_export (see below).</p>
+<h2 id="rate-offsets">Rate offsets</h2>
+<p>Note that you can tune future unknown energy rates by adjusting <strong>input_number.predbat_metric_future_rate_offset_import</strong>
+(<em>expert mode</em>) and <strong>input_number.predbat_metric_future_rate_offset_export</strong> (<em>expert mode</em>) inside Home Assistant
+to set the predicted offset for future unknown rates.</p>
+<h2 id="future-agile-energy-rates">Future Agile energy rates</h2>
+<p>In the energy market it's possible to calculate the Octopus Agile rates from around 10am UK time using public data, you can
+enable this in apps.yaml for Import, Export or both. This will approximate next day's rates based on the spot prices.
+The approximation is only used until the real Octopus Agile rates are released around 4pm.</p>
+<p>CAUTION: You may violate the terms and conditions of the Nordpool site if you use this data and as such the authors of
+Predbat accept no responsibility for any violations:</p>
+<p><a href="https://www.nordpoolgroup.com/en/About-us/terms-and-conditions-for-useofwebsite/">https://www.nordpoolgroup.com/en/About-us/terms-and-conditions-for-useofwebsite/</a></p>
+<h2 id="nordpool-market-energy-rates">Nordpool market energy rates</h2>
+<pre><code class="language-yaml">futurerate_url: '&lt;https://www.nordpoolgroup.com/api/marketdata/page/325?currency=GBP&gt;'
+futurerate_adjust_import: True
+futurerate_adjust_export: True
+futurerate_peak_start: &quot;16:00:00&quot;
+futurerate_peak_end: &quot;19:00:00&quot;
+futurerate_peak_premium_import: 14
+futurerate_peak_premium_export: 6.5
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../install/" class="btn btn-neutral float-left" title="Install details"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../car-charge-planning/" class="btn btn-neutral float-right" title="Car charging planning">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../install/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../car-charge-planning/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

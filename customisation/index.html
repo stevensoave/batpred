@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Customisation - Predbat Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Customisation";
+        var mkdocs_page_input_path = "customisation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Predbat Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../what-does-predbat-do/">What does Predbat do?</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing & configuring Predbat</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../installation-summary/">Install summary</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/">Install details</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../energy-rates/">Energy rates</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../car-charge-planning/">Car charging planning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../config-yml-settings/">apps.yaml settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration-guide/">Configuration guide</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Customisation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#predbat-mode">Predbat mode</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#predbat-monitor-mode">Predbat Monitor mode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#predbat-control-soc-only-mode">Predbat Control SOC Only mode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#predbat-control-charge-mode">Predbat Control Charge mode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#predbat-control-charge-discharge-mode">Predbat Control Charge &amp; Discharge mode</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#expert-mode">Expert mode</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#performance-related">Performance related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#battery-loss-options">Battery loss options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#scaling-and-weight-options">Scaling and weight options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#historical-load-data">Historical load data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#car-charging-hold-options">Car charging hold options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#car-charging-plan-options">Car charging plan options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calculation-options">Calculation options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#battery-margins-and-metrics-options">Battery margins and metrics options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inverter-control-options">Inverter control options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iboost-model-options">IBoost model options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#debug">Debug</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../video-guides/">Video Guides</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Viewing Predbat data</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../output-data/">Output data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../creating-charts/">Creating the charts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../predbat-plan-card/">Predbat Plan card</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Predbat development</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../other-inverters/">Other Inverters</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../todo-list/">To-do list</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developing/">Developing on Predbat</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Predbat Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Installing & configuring Predbat</li>
+      <li class="breadcrumb-item active">Customisation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="customisation">Customisation</h1>
+<p>These are configuration items that you can modify to fit your needs, you can configure these in Home Assistant directly.
+Changing the items in apps.yaml will have no effect.</p>
+<p>See <a href="../output-data/#displayng-output-data">Displaying output data</a>
+for information on how to view and edit these entities within
+Home Assistant.</p>
+<h2 id="predbat-mode">Predbat mode</h2>
+<p>The mode that Predbat operates in will change the operation, this can be configured with <strong>select.predbat_mode</strong> drop down menu as follows:</p>
+<ul>
+<li>Monitor</li>
+<li>Control SOC Only</li>
+<li>Control charge</li>
+<li>Control charge &amp; discharge</li>
+</ul>
+<p>If <strong>switch.predbat_set_read_only</strong> is True then the plan will be updated but the inverter controls will not be used, this is useful to pause
+Predbat operation while an automation takes over.</p>
+<p><em>CAUTION: If you use Read only mode while the inverter is in a particular state e.g. with discharge disable, you will need to return it to
+the desired state yourself</em></p>
+<h3 id="predbat-monitor-mode">Predbat Monitor mode</h3>
+<p>In <strong>monitor</strong> mode Predbat will not control charging or discharging, inverter balancing will take place if enabled, the plan will show
+just what is expected based on the current inverter configuration alone.</p>
+<h3 id="predbat-control-soc-only-mode">Predbat Control SOC Only mode</h3>
+<p>In <strong>Control SOC Only</strong> mode Predbat will adjust the target charge percentage (SOC target) according to the Best plan, but the charge
+window will not be modified.  This can be useful if you just have one fixed
+charge slot per day and you only want Predbat to control the percentage.</p>
+<p><em>CAUTION: If the charge window is disabled then no charging will take place.</em></p>
+<h3 id="predbat-control-charge-mode">Predbat Control Charge mode</h3>
+<p>In <strong>Control Charge</strong> mode Predbat will set the charge times and charge percentages according to the Best plan, charging can be enabled and
+disabled by Predbat.</p>
+<h3 id="predbat-control-charge-discharge-mode">Predbat Control Charge &amp; Discharge mode</h3>
+<p>In <strong>Control Charge and Discharge</strong> mode Predbat will set both charge and discharge times and control charge and discharge percentages.</p>
+<p>If you have set the <strong>switch.predbat_set_discharge_freeze_only</strong> to True then forced export won't occur but Predbat can force the export
+of solar power to the grid when desired.</p>
+<h2 id="expert-mode">Expert mode</h2>
+<p>Predbat has a toggle switch called <strong>switch.predbat_expert_mode</strong> which is off by default for new installs (on
+by default for upgraded installs). A lot of configuration items will not be available unless expert mode is enabled.
+It's recommended for new users to start without expert mode and then maybe enable it later once you become more
+confident with the tool.</p>
+<h2 id="performance-related">Performance related</h2>
+<p>By default Predbat controls the inverter and updates the plan every 5 minutes, this can however use a lot of CPU power
+especially on more complex tariffs like Agile when run on lower power machines such as Raspberry PIs and some thin clients.</p>
+<p>You can tweak <strong>input_number.predbat_calculate_plan_every</strong> (<em>expert mode</em>) to reduce the frequency of replanning while
+keeping the inverter control in the 5 minute slots. E.g. a value of 10 or 15 minutes should also give good results.</p>
+<p>If you have performance problems leave <strong>switch.predbat_calculate_second_pass</strong> (<em>expert mode</em>) turned Off as it's
+quite CPU intensive and provides very little improvement for most systems.</p>
+<p>If you have performance problems turn <strong>switch.predbat_calculate_fast_plan</strong> (<em>expert mode</em>) On to help
+reduce your CPU load.</p>
+<h2 id="battery-loss-options">Battery loss options</h2>
+<p><strong>input_number.battery_loss</strong> accounts for energy lost charging the battery, default 0.05 is 5%</p>
+<p><strong>input_number.battery_loss_discharge</strong> accounts for energy lost discharging the battery, default 0.05 is 5%</p>
+<p><strong>input_number.inverter_loss</strong> accounts for energy loss during going from DC to AC or AC to DC, default is 0% for
+legacy reasons but please adjust.</p>
+<p><strong>switch.inverter_hybrid</strong> When True you have a hybrid inverter so no inverter losses for DC charging. When false
+you have inverter losses as it's AC coupled battery.</p>
+<p><strong>input_number.metric_battery_cycle</strong> (<em>expert mode</em>) Sets the cost in pence per kWh of using your battery for
+charging and discharging. Higher numbers will reduce battery cycles at the expensive of higher energy costs.
+Figures of around 1p-5p are recommended, the default is 0.</p>
+<p><strong>input_number.predbat_metric_battery_value_scaling</strong> (<em>expert mode</em>) Can be used to scale the value of the energy
+in the battery at the end of the plan. The battery value is accounted for in the optimisations at the lowest future
+import rate including charging and inverter losses. A value of 1.0 means no change to this, while lower than 1.0
+means to value future battery levels less, greater than 1.0 will value it more (and hence hold more charge at the end of the plan).</p>
+<h2 id="scaling-and-weight-options">Scaling and weight options</h2>
+<p><strong>input_number.battery_rate_max_scaling</strong> adjusts your maximum charge/discharge rate from that reported by GivTCP
+e.g. a value of 1.1 would simulate a 10% faster charge/discharge than reported by the inverter</p>
+<p><strong>input_number.load_scaling</strong> is a Scaling factor applied to historical load, tune up if you want to be more pessimistic on future consumption
+Use 1.0 to use exactly previous load data (1.1 would add 10% to load)</p>
+<p><strong>input_number.load_scaling10</strong> is a Scaling factor applied to historical load only for the PV10% scenario (this is in addition to load_scaling).
+This can  be used to make the 10% scenario take into account extra load usage and hence be more pessimistic while leaving the central
+scenario unchanged. The default is 1.1 meaning an extra 10% load is added. This will only have an impact if the PV 10% weighting is non-zero.</p>
+<p><strong>input_number.pv_scaling</strong> is a scaling factor applied to pv data, tune down if you want to be more pessimistic on PV production vs Solcast
+Use 1.0 to use exactly the Solcast data (0.9 would remove 10% from forecast)</p>
+<p><strong>input_number.pv_metric10_weight</strong> is the weighting given to the 10% PV scenario. Use 0.0 to disable this.
+A value of 0.1 assumes that 1:10 times we get the 10% scenario and hence to count this in the metric benefit/cost.
+A value of 0.15 is recommended.</p>
+<h2 id="historical-load-data">Historical load data</h2>
+<p>The historical load data is taken from the load sensor as configured in apps.yaml and the days are selected
+using <strong>days_previous</strong> and weighted using <strong>*days_previous_weight</strong> in the same configuration file</p>
+<p><strong>switch.predbat_load_filter_modal</strong> (<em>expert mode</em>) when enabled will automatically discard the lowest daily consumption
+day from the list of days to use (provided you have more than 1 day selected in days_previous). This can be used to ignore
+a single low usage day in your average calculation. By default is feature is enabled but can be disabled only in expert mode.</p>
+<h2 id="car-charging-hold-options">Car charging hold options</h2>
+<p>Car charging hold is a feature where you try to filter out previous car charging from your historical data so that
+future predictions are more accurate.</p>
+<p>When <strong>car_charging_hold</strong> is enabled loads of above the power threshold <strong>car_charging_threshold</strong> then you are
+assumed to be charging the car and <strong>car_charging_rate</strong> will be subtracted from the historical load data.</p>
+<p>For more accurate results can you use an incrementing energy sensor set with <strong>car_charging_energy</strong> in the apps.yml
+then historical data will be subtracted from the load data instead.</p>
+<p><strong>car_charging_energy_scale</strong> Is used to scale the <strong>car_charging_energy</strong> sensor, the default units are kWh so
+if you had a sensor in watts you might use 0.001 instead.</p>
+<p><strong>car_charging_rate</strong> sets the rate your car is assumed to charge at, but will be pulled automatically from Octopus Energy plugin if enabled</p>
+<p><strong>car_charging_loss</strong> gives the amount of energy lost when charging the car (load in the home vs energy added to the battery). A good setting is 0.08 which is 8%.</p>
+<h2 id="car-charging-plan-options">Car charging plan options</h2>
+<p>Car charging planning - is only used if Intelligent Octopus isn't enabled and car_charging_planned is connected correctly.</p>
+<p>This feature allows Predbat to create a plan for when you car will charge, but you will have to create an automation
+to trigger your car to charge using <strong>binary_sensor.predbat_car_charging_slot</strong> if you want it to match the plan.</p>
+<p><strong>car_charging_plan_time</strong> Is set to the time you expect your car to be fully charged by
+<strong>car_charging_plan_smart</strong> When enabled allows Predbat to allocated car charging slots to the cheapest times,
+when disabled all low rate slots will be used in time order.</p>
+<p><strong>switch.predbat_octopus_intelligent_charging</strong> when true enables the Intelligent Octopus charging feature
+which will make Predbat create a car charging plan which is taken from the Intelligent Octopus plan
+you must have set <strong>octopus_intelligent_slot</strong> sensor in apps.yaml to enable this feature.</p>
+<p>If Octopus Intelligent Charging is enabled the switch <strong>'switch.predbat_octopus_intelligent_ignore_unplugged'</strong> (<em>expert mode</em>)
+can be used to prevent Predbat from assuming the car will be charging when the car is unplugged. This will only work correctly
+if <strong>car_charging_planned</strong> is set correctly in apps.yaml to detect your car being plugged in.</p>
+<h2 id="calculation-options">Calculation options</h2>
+<p>See the Predbat mode setting as above for basic calculation options</p>
+<p><strong>switch.predbat_calculate_fast_plan</strong> (<em>expert mode</em>) When True the plan is calculated with a limited number of
+windows to make calculations faster. When False (default) all windows are considered but planning will take a little
+longer but be more accurate.
+The end result is unlikely to change in fast mode as the next 8 windows are always considered in the plan, but the
+longer term plan will be less accurate.</p>
+<p><strong>switch.predbat_calculate_discharge_oncharge</strong> (<em>expert mode</em>) When True calculated discharge slots will
+disable or move charge slots, allowing them to intermix. When False discharge slots will never be placed into charge slots.</p>
+<p><strong>switch.predbat_calculate_tweak_plan</strong> (<em>expert mode</em>) When True causes Predbat to perform a second pass optimisation
+across the next 8 charge and discharge windows in time order.</p>
+<p>This can help to slightly improve the plan for tariffs like Agile but can make it worse in some fixed rate tariffs which
+you want to discharge late.</p>
+<p><strong>switch.predbat_calculate_second_pass</strong> (<em>expert mode</em>) When True causes Predbat to perform a second pass optimisation
+across all the charge and discharge windows in time order.</p>
+<p>NOTE: This feature is quite slow and so may need a higher performance machine</p>
+<p>This can help to slightly improve the plan for tariffs like Agile but can make it worse in some fixed rate tariffs which
+you want to discharge late.</p>
+<h2 id="battery-margins-and-metrics-options">Battery margins and metrics options</h2>
+<p><strong>best_soc_keep</strong> is minimum battery level to try to keep above during the whole period of the simulation time,
+soft constraint only (use min for hard constraint). It's usually good to have this above 0 to allow some margin
+in case you use more energy than planned between charge slots.</p>
+<p><strong>best_soc_min</strong> (<em>expert mode</em>) sets the minimum charge level (in kWh) for charging during each slot and the
+minimum discharge level also (set to 0 if you want to skip some slots). If you set this non-zero you will need
+to use the low rate threshold to control which slots you charge from or you may charge all the time.</p>
+<p><strong>best_soc_max</strong> (<em>expert mode</em>) sets the maximum charge level (in kWh) for charging during each slot.
+A value of 0 disables this feature.</p>
+<p><strong>combine_charge_slots</strong> Controls if charge slots of &gt; 30 minutes can be combined. When disabled they will be split up,
+increasing run times but potentially more accurate for planning. Turn this off if you want to enable ad-hoc import
+during long periods of higher rates but you wouldn't charge normally in that period (e.g. pre-charge at day rate before
+a saving session). The default is enable (True)</p>
+<p><strong>combine_discharge_slots</strong> (<em>expert mode</em>) Controls if discharge slots of &gt; 30 minute can be combined. When disabled
+they will be split up, increasing run times but potentially more accurate for planning. The default is disabled (False)</p>
+<p><strong>metric_min_improvement</strong> (<em>expert mode</em>) sets the minimum cost improvement that it's worth lowering the battery SOC % for.
+If it's 0 then this is disabled and the battery will be charged less if it's cost neutral.
+If you use <strong>pv_metric10_weight</strong> then you probably don't need to enable this as the 10% forecast does the same thing better
+Do not use if you have multiple charge windows in a given period as it won't lead to good results (e.g. Agile)
+You could even go to something like -0.1 to say you would charge less even if it cost up to 0.1p more (best used with metric10)</p>
+<p><strong>metric_min_improvement_discharge</strong> (<em>expert mode</em>) Sets the minimum cost improvement it's worth discharging for.
+A value of 0.1 is the default which prevents any marginal discharges. If you increase this value then discharges will become less common and shorter.</p>
+<p><strong>rate_low_threshold</strong> (<em>expert mode</em>) When 0 (default) this is automatic but can be overridden. When non zero it sets
+the threshold below average rates as the minimum to consider for a charge window, 0.8 = 80% of average rate
+If you set this too low you might not get enough charge slots. If it's too high you might get too many in the
+24-hour period which makes optimisation harder.</p>
+<p><strong>rate_high_threshold</strong> (<em>expert mode</em>) When 0 (default) this is automatic but can be overridden. When non zero it sets
+the threshold above average rates as to the minimum export rate to consider exporting for - 1.2 = 20% above average rate
+If you set this too high you might not get any export slots. If it's too low you might get too many in the 24-hour period.</p>
+<p><strong>metric_future_rate_offset_import</strong> (<em>expert mode</em>) Sets an offset to apply to future import energy rates that are
+not yet published, best used for variable rate tariffs such as Agile import where the rates are not published until 4pm.
+If you set this to a positive value then Predbat will assume unpublished import rates are higher by the given amount.</p>
+<p><strong>metric_future_rate_offset_export</strong> (<em>expert mode</em>) Sets an offset to apply to future export energy rates that are
+not yet published, best used for variable rate tariffs such as Agile export where the rates are not published until 4pm.
+If you set this to a negative value then Predbat will assume unpublished export rates are lower by the given amount.</p>
+<p><strong>switch.predbat_calculate_inday_adjustment</strong> (<em>expert mode</em>) Enabled by default with damping of 0.95. When enabled will
+calculate the difference between today's actual load and today's predicated load and adjust the rest of the days usage
+prediction accordingly. A scale factor can be set with <strong>input_number.predbat_metric_inday_adjust_damping</strong> (<em>expert mode</em>)
+to either scale up or down the impact of the in-day adjustment (lower numbers scale down its impact). The in-day adjustment
+factor can be see in <strong>predbat.load_inday_adjustment</strong> and charted with the In Day Adjustment chart (template can be found
+in the charts template in Github).</p>
+<h2 id="inverter-control-options">Inverter control options</h2>
+<p><strong>set_status_notify</strong> Enables mobile notification about changes to the Predbat state (e.g. Charge, Discharge etc). On by default.</p>
+<p><strong>set_inverter_notify</strong> Enables mobile notification about all changes to inverter registers (e.g. setting window, turning discharge on/off).
+Off by default.</p>
+<p><strong>switch.predbat_set_charge_low_power</strong> Enables low power charging mode where the max charge rate will be limited to the
+lowest possible to meet the charge target. Only really effective for charge windows &gt;30 minutes.
+Off by default.</p>
+<p><strong>set_reserve_enable</strong> (<em>expert_mode</em>) When enabled the reserve setting is used to hold the battery charge level
+once it has been reached or to protect against discharging beyond the set limit. Enabled by default.</p>
+<p><strong>set_charge_freeze</strong> (<em>expert mode</em>) When enabled will allow Predbat to hold the current battery level while drawing
+from the grid/solar as an alternative to charging. Enabled by default.</p>
+<p><strong>set_discharge_freeze_only</strong> (<em>expert mode</em>) When enabled forced discharge is prevented, but discharge freeze can be used
+(if enabled) to export excess solar rather than charging the battery. This is useful with tariffs that pay you for
+solar exports but don't allow forced export (brown energy).</p>
+<p>If you have <strong>inverter_hybrid</strong> set to False then if <strong>inverter_soc_reset</strong> (<em>expert mode</em>) is set to True then the
+target SOC % will be reset to 100% outside a charge window. This may be required for AIO inverter to ensure it charges from solar.</p>
+<p><strong>set_reserve_min</strong> Defines the reserve percentage to reset the reserve to when not in use, a value of 4 is the
+minimum and recommended to make use of the full battery</p>
+<p><strong>inverter_soc_reset</strong>  (<em>expert mode</em>) When enabled the target SOC for the inverter(s) will be reset to 100%
+when a charge slot is not active, this can be used to workaround some firmware issues where the SOC target is
+used for solar charging as well as grid charging. When disabled the SOC % will not be changed after a charge slot.
+This is disabled by default.</p>
+<h2 id="iboost-model-options">IBoost model options</h2>
+<p>IBoost model, when enabled with <strong>iboost_enable</strong> tries to model excess solar energy being used to heat
+hot water (or similar). The predicted output from the IBoost model is returned in <strong>iboost_best</strong>.</p>
+<p>The following entities are only available when you turn on iboost enable:</p>
+<p><strong>iboost_max_energy</strong> Sets the max energy sets the number of kwh that iBoost can consume during a day before turning off - default 3kWh</p>
+<p><strong>iboost_max_power</strong> Sets the maximum power in watts to consume - default 2400</p>
+<p><strong>iboost_min_power</strong> Sets the minimum power in watts to consume - default 500</p>
+<p><strong>iboost_min_soc</strong> sets the minimum home battery soc % to enable iboost on, default 0</p>
+<p>You will see <strong>predbat.iboost_today</strong> entity which tracks the estimated amount consumed during the day, and resets at night</p>
+<p>If you have an incrementing Sensor that tracks IBoost energy usage then you should set <strong>iboost_energy_today</strong> sensor in
+apps.yaml to point to it and optionally set <strong>iboost_energy_scaling</strong> if the sensor isn't in kWh.</p>
+<h2 id="debug">Debug</h2>
+<p><strong>debug_enable</strong> when on prints lots of debug, leave off by default</p>
+<p><strong>plan_debug</strong> (<em>expert mode</em>) when enabled adds some extra debug to the Predbat HTML plan</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../configuration-guide/" class="btn btn-neutral float-left" title="Configuration guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../video-guides/" class="btn btn-neutral float-right" title="Video Guides">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../configuration-guide/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../video-guides/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
